@@ -23,6 +23,7 @@ default: &default
   username: tester
   password: test
   host: localhost
+  #for dev on local host only dev
 
 development:
   <<: *default
