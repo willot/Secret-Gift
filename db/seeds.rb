@@ -45,5 +45,10 @@ urls = 100.times.map do
 		})
 end
 
-
+50.times.map do
+	User_list.create!({
+		user_id: users.sample.id,
+		list_id: lists.sample.id
+		})
+end	
 
