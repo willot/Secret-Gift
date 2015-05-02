@@ -10,37 +10,37 @@ require "ffaker"
 
 users = 40.times.map do
 	User.create!({
-		name: Faker::Name.name,
-		username: Faker::Internet.user_name,
-		username: Faker::Internet.email,
-		password: "password"
+		name: FFaker::Name.name,
+		username: FFaker::Internet.user_name,
+		username: FFaker::Internet.email,
+		password_digest: "password"
 		})
 end
 
 lists = 10.times.map do
 	List.create!({
-		name: Faker::Company.name,
+		name: FFaker::Company.name,
 		range_high: rand(50..100),
 		range_low: rand(25..49),
-		description: Faker::Lorem.paragraph,
-		date: Faker::Time.date,
-		period: Faker::Lorem.word,
+		description: FFaker::Lorem.paragraph,
+		date: FFaker::Time.date,
+		period: FFaker::Lorem.word,
 		admin: users.sample.id
 		})
 end	
 
 wishes = 80.times.map do
 	Wish.create!({
-		name: Faker::Team.name,
-		description: Faker::Lorem.paragraph,
-		price: Faker::Number.between(from = 35, to = 125),
+		name: FFaker::Team.name,
+		description: FFaker::Lorem.paragraph,
+		price: FFaker::Number.between(from = 35, to = 125),
 		user_id: users.sample.id
 		})
 end	
 
 urls = 100.times.map do
 	Url.create!({
-		url: Faker::Internet.url,
+		url: FFaker::Internet.url,
 		wish_id: wishes.sample.id
 		})
 end
