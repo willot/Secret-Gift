@@ -27,6 +27,7 @@ lists = 10.times.map do
 		period: Faker::Lorem.word,
 		admin: users.sample.id
 		})
+end	
 
 wishes = 80.times.map do
 	Wish.create!({
@@ -35,4 +36,14 @@ wishes = 80.times.map do
 		price: Faker::Number.between(from = 35, to = 125),
 		user_id: users.sample.id
 		})
+end	
+
+urls = 100.times.map do
+	Url.create!({
+		url: Faker::Internet.url,
+		wish_id: wishes.sample.id
+		})
+end
+
+
 
