@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-require "ffaker"
+# require "ffaker"
 
 users = 40.times.map do
 	User.create!({
@@ -25,28 +25,28 @@ lists = 10.times.map do
 		description: FFaker::Lorem.paragraph,
 		date: FFaker::Time.date,
 		period: FFaker::Lorem.word,
-		admin: users.sample.id
+		user_id: users.sample.id
 		})
 end	
 
 wishes = 80.times.map do
 	Wish.create!({
-		name: FFaker::Team.name,
+		name: FFaker::Conference.name,
 		description: FFaker::Lorem.paragraph,
-		price: FFaker::Number.between(from = 35, to = 125),
+		price: rand(25..100),
 		user_id: users.sample.id
 		})
 end	
 
 urls = 100.times.map do
 	Url.create!({
-		url: FFaker::Internet.url,
+		url: Faker::Internet.url,
 		wish_id: wishes.sample.id
 		})
 end
 
 50.times.map do
-	User_list.create!({
+	UserList.create!({
 		user_id: users.sample.id,
 		list_id: lists.sample.id
 		})
