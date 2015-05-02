@@ -15,5 +15,13 @@ users = 40.times.map do
 		username: Faker::Internet.email,
 		password: "password"
 		})
-
 end
+
+list = 10.times.map do
+	List.create!({
+		name: Faker::Company.name,
+		range_high: rand(50..100),
+		range_low: rand(25..49),
+		description: Faker::Lorem.paragraph,
+		
+		})
