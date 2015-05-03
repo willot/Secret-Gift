@@ -6,5 +6,7 @@ class List < ActiveRecord::Base
 	belongs_to :admin, class_name: "User", foreign_key: "user_id" 
 
 	validates :name, uniqueness: true, presence: true
-	
+	validates_length_of :description,
+		:maximum => 900,
+		:too_long =>"Limit is 500 characters"
 end
