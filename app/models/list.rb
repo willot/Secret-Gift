@@ -4,4 +4,7 @@ class List < ActiveRecord::Base
 	has_many :wishes #, through: :users
 	has_many :urls, through: :wishes
 	belongs_to :admin, class_name: "User", foreign_key: "user_id" 
+
+	validates :name, uniqueness: true, presence: true
+	
 end
