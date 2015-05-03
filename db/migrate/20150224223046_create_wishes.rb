@@ -5,6 +5,7 @@ class CreateWishes < ActiveRecord::Migration
     	t.text :description
     	t.integer :price
     	t.references :user
+    	t.references :list
 
       	t.timestamps null: false
     end
