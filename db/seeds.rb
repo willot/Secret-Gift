@@ -25,7 +25,8 @@ wishes = 80.times.map do
 		name: FFaker::Conference.name,
 		description: FFaker::Lorem.paragraph,
 		price: rand(25..100),
-		user_id: users.sample.id
+		user_id: users.sample.id,
+		list_id: lists.sample.id
 		})
 end	
 
