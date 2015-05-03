@@ -8,6 +8,7 @@ class CreateLists < ActiveRecord::Migration
     	t.date :date
     	t.string :period
       t.references :user 
+      
 
       t.timestamps null: false
     end
