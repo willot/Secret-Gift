@@ -3,7 +3,7 @@ users = 40.times.map do
 	User.create!({
 		name: FFaker::Name.name,
 		username: FFaker::Internet.user_name,
-		username: FFaker::Internet.email,
+		email: FFaker::Internet.email,
 		password_digest: "password"
 		})
 end
