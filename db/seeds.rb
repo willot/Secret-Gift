@@ -4,7 +4,7 @@ users = 40.times.map do
 		name: FFaker::Name.name,
 		username: FFaker::Internet.user_name,
 		email: FFaker::Internet.email,
-		password_digest: "password"
+		password: "password"
 		})
 end
 
