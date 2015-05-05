@@ -8,6 +8,13 @@ users = 40.times.map do
 		})
 end
 
+User.create!({
+		name: "tester",
+		username: "tester",
+		email: "tester@example.com",
+		password: "password"
+		})
+
 lists = 10.times.map do
 	List.create!({
 		name: FFaker::Company.name,
