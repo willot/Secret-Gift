@@ -1,1 +1,13 @@
-_form.html.erb
+<%= form_for(@users) do |f|%>
+	<%= f.label :name%>
+	<%= f.text_field :name%>
+	<%= f.label :username%>
+	<%= f.text_field :username%>
+	<%= f.label :email%>
+	<%= f.text_field :email%>
+	<%= f.label :password %>
+	<%= f.password_field :password%>
+	<%= f.label :password, "retype your password" %>
+	<%= f.password_field :password_confirmation%>
+	<%= f.submit%>
+<%end%>	
