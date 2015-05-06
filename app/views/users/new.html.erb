@@ -1,1 +1,6 @@
-new.html.erb
+<div>
+<h1>Welcome to the secret gifter website</h1>
+<h3>Please create an account</h3>
+	<%=@error if @error %>
+	<%= render 'form' %>
+</div>
