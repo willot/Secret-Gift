@@ -9,14 +9,14 @@ class SessionsController < ApplicationController
 
 		if user_username && user_username.authenticate(params[:password])
 			session[:user_id] = user_username.id
-			redirect_to "/"
+			redirect_to user_username
 		elsif user_username && user_username.authenticate(params[:password]) == false
 			@error ="Unknown password for this username"
 			render :new
 
 		elsif user_email && user_email.authenticate(params[:password])
 			session[:user_id] = user_email.id
-			redirect_to "/"
+			redirect_to user_email
 
 		elsif user_email && user_email.authenticate(params[:password]) == false
 			@error ="Unknown password for this email"
