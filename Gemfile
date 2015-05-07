@@ -42,6 +42,8 @@ group :development, :test do
   gem 'faker'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'factory_girl'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
